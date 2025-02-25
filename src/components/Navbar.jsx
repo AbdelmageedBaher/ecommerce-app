@@ -45,7 +45,7 @@ export default function Navbar() {
 </button>
 
     <div className="hidden lg:flex lg:justify-between w-[80%]" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 lg:p-0 mt-4  lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0  dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
+      <ul className="font-medium flex flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0  dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
         <li>
           <NavLink to="/" className="block py-2 px-3 dark:text-gray-100   rounded lg:bg-transparent  lg:p-0 text-gray-600 " aria-current="page">Home</NavLink>
         </li>
@@ -102,17 +102,7 @@ export default function Navbar() {
         </li>
         <li>
         <div className=" dark:bg-gray-900  justify-center flex flex-row items-center transition-all ease-in-out">
-  <div className="flex flex-row justify-between toggle">
-    <label htmlFor="dark-toggle" className="flex items-center cursor-pointer">
-      <div className="relative">
-        <input type="checkbox" name="dark-mode" ref={ref} onChange={changeMode} id="dark-toggle" className="checkbox hidden" />
-        <div className="block border-[1px] dark:border-white border-gray-900 w-14 h-8 rounded-full" />
-        <div className="dot absolute left-1 top-1 dark:bg-white bg-gray-800 w-6 h-6 rounded-full transition" />
-      </div>
-      <div className="ml-3 dark:text-white text-gray-900 font-medium">
-      </div>
-    </label>
-  </div>
+  
 </div>
 
         </li>

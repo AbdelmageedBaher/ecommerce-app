@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import useMutationCart, { addCart } from './useMutationCart';
-import toast from 'react-hot-toast';
 import useMutationWish, { addCartWish } from './useMutationWish';
+import toast from 'react-hot-toast';
 
 export default function ProductItem({prod}) {
 
@@ -12,15 +12,12 @@ export default function ProductItem({prod}) {
     let {data,mutate,error,isError,isSuccess} = useMutationCart(addCart)
 
    if(isSuccess||successWish)
-   toast.success(data?.data?.message);
+   toast.success("Added successfully");
    if(isError||errorWish)
    toast.error(error?.message);
 
-   function changeColor() {
-    document.querySelector('.fa-regular').classList.add('text-main-color');
-}
   return (
-    
+
       <div className="product p-2 cursor-pointer lg:w-1/5 md:w-1/4 sm:1/2 ">
       <Link to={`/productdetails/${id}/${category._id}`} >
         <img src={imageCover} className='w-full' alt="" />
@@ -36,7 +33,7 @@ export default function ProductItem({prod}) {
         </div>
       </Link>
             <div onClick={()=>{mutate(id)}} className="btn bg-main-color w-[6rem] my-3 mx-auto ">add to cart</div>
-            <i onClick={()=>{mutated(id),changeColor}}  class={`fa-regular fa-heart fa-xl mb-4 mr-2 float-right`}></i>
+            <i onClick={()=>{mutated(id)}}  class={`fa-solid fa-heart fa-xl mb-4 mr-2 float-right hover:text-red-700`}></i>
     </div>
   )
 }

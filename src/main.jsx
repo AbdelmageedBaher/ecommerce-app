@@ -20,8 +20,8 @@ createRoot(document.getElementById('root')).render(
     <NumCartItemProvider>
     <QueryClientProvider client={queryClient}>
     <UserTokenProvider>
-    <Toaster />
-        <App/> 
+    <Toaster position="top-right" reverseOrder={true}/>
+    <App/> 
     </UserTokenProvider>
     </QueryClientProvider>
     </NumCartItemProvider>

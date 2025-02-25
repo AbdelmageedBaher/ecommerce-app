@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import useQueryCart, { getCarts } from './useQueryCart'
-import Loading from './Loading';
 import useMutationCart, { clearItem, deleteItem, updateItem } from './useMutationCart';
 import img1 from '../assets/images/light-patten.svg'
 import Payment from './Payment';
 import { Helmet } from 'react-helmet';
 import { numItem } from './Context/NumCartItems';
+import Loading from './Loading';
 
 
 export default function Cart() {
@@ -39,7 +39,7 @@ export default function Cart() {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
    <div className="flex justify-between my-10 py-4 px-3 shadow-lg rounded-lg">
-   <h2 className='font-bold '>Numbers Of Cart Items : {data?.data?.numOfCartItems}</h2>
+   <h2 className='font-bold '>Numbers Of Cart Items : <strong className='text-main-color'>{data?.data?.numOfCartItems}</strong></h2>
    <h1 className=' font-bold'>Numbers Of Cart Items : <strong className='text-main-color font-extrabold'>{data?.data?.data?.totalCartPrice} </strong> EGY</h1>
 
    </div>
@@ -96,7 +96,7 @@ export default function Cart() {
         {prod?.price} EGY
       </td>
       <td className="px-6 py-4">
-        <a href="#" onClick={()=>{mutate(prod?.product?._id)}} className="font-medium dark:text-red-500 hover:bg-green-600 bg-main-color p-3 rounded-lg text-white">Remove <i className='fa-solid fa-trash'></i></a>
+        <a href="#" onClick={()=>{mutate(prod?.product?._id)}} className="font-medium dark:text-red-500 hover:bg-red-700 bg-red-600 p-3 rounded-lg text-white">Remove <i className='fa-solid fa-trash'></i></a>
       </td>
     </tr>
       )}
