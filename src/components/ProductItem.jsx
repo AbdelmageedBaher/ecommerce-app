@@ -9,12 +9,12 @@ export default function ProductItem({prod}) {
     let { imageCover,id,price,ratingsAverage,title,priceAfterDiscount,category } = prod;
     let {mutate:mutated,isSuccess:successWish,isError:errorWish} = useMutationWish(addCartWish);
 
-    let {data,mutate,error,isError,isSuccess} = useMutationCart(addCart)
+    let {data,mutate,isError,isSuccess} = useMutationCart(addCart)
 
    if(isSuccess||successWish)
    toast.success("Added successfully");
    if(isError||errorWish)
-   toast.error(error?.message);
+   toast.error('Please Register and Login First');
 
   return (
 
